@@ -1,0 +1,8 @@
+# pm2 config
+
+apps:
+  - script   : server
+    exec_mode: fork
+    watch  : true
+    env    :
+      NODE_ENV: production

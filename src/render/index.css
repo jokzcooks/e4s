@@ -1,0 +1,99 @@
+
+:root {
+  --grey: #BCBCBC;
+  --black: #414141;
+  --black-dim: #414141c8;
+  --white: #F7FAFF;
+}  
+  
+@font-face {
+  font-family: Jacques-Francois;
+  src: url(../../public/fonts/JacquesFrancois-Regular.ttf)
+}
+
+html, body {
+    background-color: var(--white);
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  ::-webkit-scrollbar{
+    width:0;
+    background-color:transparent;
+  }
+  
+  img, p {
+    user-select: none;
+    -webkit-user-drag: none;  
+    margin: 0px;
+    padding: 0px;
+    font-family: Jacques-Francois;
+  }
+  
+  select, input[type="text"]{
+    width:100%;
+    box-sizing:border-box;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+  
+  .mainContainer {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-flow: row nowrap;
+    border: 0;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .headerContainer {
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    max-width: 1000px;
+    border: 2px solid red;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .hrzLine {
+    width: 100%;
+    height: 3px;
+    background-color: var(--black);
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0px 20px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hrzLine > p {
+    margin: 0px;
+    padding: 0px;
+    font-family: Jacques-Francois;
+    padding: 0px 10px;
+    background: var(--white);
+    margin-top: -5px;
+    font-size: calc(12px + 1.5vw);
+    cursor: pointer;
+  }
+
+  .hrzLine > p:hover {
+    color: var(--black-dim);
+  }
+
+  .hrzLine > .help, .hrzLine > .search {
+    border-left: 3px solid var(--black);
+    border-right: 3px solid var(--black);
+    font-size: calc(12px + 1vw);
+  }
+
+  .hrzLine > .search {
+    margin-left: auto;
+  }

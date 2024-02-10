@@ -2,11 +2,46 @@
   "name": "e4s",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "react-scripts build",
+    "server": "nodemon server",
+    "react": "react-scripts start",
+    "dev": "concurrently \"npm run server \" \"npm run react\" ",
+    "start": "react-scripts build && sudo su -c \"pm2 start process.yml\" root && echo To kill, run \\\"npm run stop\\\"",
+    "stop": "sudo su -c \"pm2 stop server\" root",
+    "eject": "react-scripts eject"
   },
+  "nodemonConfig": {
+    "ext": "js,jsx,css,mjs,cjs,json"
+  },
+  "proxy": "http://localhost:9000",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1",
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.22.0",
+    "react-router-dom": "^6.22.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
