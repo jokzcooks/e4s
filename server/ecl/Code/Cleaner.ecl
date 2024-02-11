@@ -100,13 +100,17 @@ CleanFireStationRec := RECORD
     STRING35  city;
     STRING2   state;
     STRING10   zipcode;
+    REAL8     Xcoor;
+    REAL8     Ycoor;
 END;
 EXPORT fireStations := PROJECT(HMK.FireDS, TRANSFORM(CleanFireStationRec,
                         SELF.name := LEFT.name,
                         SELF.address := LEFT.address,
                         SELF.city := LEFT.city,
                         SELF.state := LEFT.state,
-                        SELF.zipcode := LEFT.zipcode));
+                        SELF.zipcode := LEFT.zipcode,
+                        SELF.Xcoor := LEFT.Xcoor,
+                        SELF.Ycoor := LEFT.Ycoor));
 // Outputting fire station data
 // OUTPUT(fireStations, NAMED('FireStations'));
 
@@ -121,7 +125,6 @@ CleanCitiesRec := RECORD
     REAL8     lng;
     UNSIGNED4 population;
     REAL4     density;
-    STRING1855 zips;
 END;
 EXPORT citiesData := PROJECT(HMK.City_DS, TRANSFORM(CleanCitiesRec,
                         SELF.city := LEFT.city,
@@ -132,8 +135,7 @@ EXPORT citiesData := PROJECT(HMK.City_DS, TRANSFORM(CleanCitiesRec,
                         SELF.lat := LEFT.lat,
                         SELF.lng := LEFT.lng,
                         SELF.population := LEFT.population,
-                        SELF.density := LEFT.density,
-                        SELF.zips := LEFT.zips));
+                        SELF.density := LEFT.density));
 
 // Outputting Cities data
 // OUTPUT(citiesData, NAMED('Cities'));

@@ -9,9 +9,8 @@
             "serverAddress": "training.us-hpccsystems-dev.azure.lnrsg.io",
             "port": 8010,
             "targetCluster": "thor",
-            "rejectUnauthorized": true,
+            "rejectUnauthorized": false,
             "resultLimit": 0,
-            "timeoutSecs": 1000,
             "user": "Cole Nangle",
             "password": ""
         },
@@ -23,9 +22,8 @@
             "serverAddress": "localhost",
             "port": 8010,
             "targetCluster": "thor",
-            "rejectUnauthorized": true,
+            "rejectUnauthorized": false,
             "resultLimit": 0,
-            "timeoutSecs": 1000,
             "user": "Cole Nangle",
             "password": ""
         },
@@ -37,9 +35,8 @@
             "serverAddress": "play.hpccsystems.com",
             "port": 18010,
             "targetCluster": "thor",
-            "rejectUnauthorized": true,
+            "rejectUnauthorized": false,
             "resultLimit": 0,
-            "timeoutSecs": 1000,
             "user": "Cole Nangle",
             "password": ""
         }

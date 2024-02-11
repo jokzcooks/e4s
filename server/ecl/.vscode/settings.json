@@ -3,6 +3,6 @@
     "ecl.launchConfiguration": "WorkshopCluster",
     "ecl.targetCluster": {},
     // "ecl.eclccPath": "C:\\Program Files (x86)\\HPCCSystems\\9.0.4\\clienttools\\bin\\eclcc.exe",
-    "ecl.eclccPath": "C:\\Program Files\\HPCCSystems\\9.4.32\\clienttools\\bin\\eclcc.exe",
+    // "ecl.eclccPath": "C:\\Program Files\\HPCCSystems\\9.4.32\\clienttools\\bin\\eclcc.exe",
     // 'C:\Program Files\HPCCSystems\9.4.32\clienttools\bin\eclcc.log'
 }
