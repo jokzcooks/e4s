@@ -3,6 +3,7 @@ const { exit } = require("process");
 const axios = require("axios")
 const CountiesList = require("./cleaned/CountiesList");
 const MissingChildren = require("./cleaned/MissingChildren");
+const { loadDocuments } = require("./distributer");
 
 const normalize = (min, max, value) => {
     return ((Number(value)-Number(min))/(Number(max)-Number(min)))
@@ -73,6 +74,10 @@ const downloadImages = async () => {
     console.log()
     await popDensities()
     console.log()
-    await downloadImages()
+    // await downloadImages()
     console.log()
+    // lat lon for abduction cities
+    // 
+    await loadDocuments()
+    return
 })();
