@@ -6,6 +6,7 @@
     "build": "react-scripts build",
     "server": "nodemon server",
     "react": "react-scripts start",
+    "gen-dev": "node .\\server\\data\\compiler.js && npm run dev",
     "dev": "concurrently \"npm run server \" \"npm run react\" ",
     "start": "react-scripts build && sudo su -c \"pm2 start process.yml\" root && echo To kill, run \\\"npm run stop\\\"",
     "stop": "sudo su -c \"pm2 stop server\" root",
