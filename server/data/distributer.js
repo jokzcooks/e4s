@@ -1,0 +1,1 @@
+// distribute data to mongo
