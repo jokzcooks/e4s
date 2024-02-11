@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Chevron, ChevronFlipped } from "../../components/Images";
-import { ChoroplethCounties, ChoroplethStates, Layered, topoJsonFolder } from "@hpcc-js/map";
-import CountiesList from "../../utils/CountiesListUnfiltered";
+import { ChoroplethCounties, ChoroplethStates, Graticule, Layered, topoJsonFolder, Pins } from "@hpcc-js/map";
+import CountiesList from "../../utils/CountiesList";
 
 const InfoPage = ({setError}) => {
 
@@ -24,9 +24,11 @@ const InfoPage = ({setError}) => {
         // .paletteID("Blues")
         // ;
 
+        const graticule = new Graticule();
+
         const counties = new ChoroplethCounties()
             .columns(["Fips Code", "Weight"])
-            .data(CountiesList.Row.map(county => ([county.county_fips, county.density])))
+            .data(CountiesList.map(county => ([county.fips, county.density_magnitude*10])))
             .paletteID("Reds")
             .opacity(1)
             ;
@@ -34,7 +36,10 @@ const InfoPage = ({setError}) => {
         new Layered()
         .layers([
             // states,
-            counties
+            graticule,
+            // pins2,
+            // pins3,
+            counties,
         ])
         .target("target")
         .projection("AlbersUsaPr")
