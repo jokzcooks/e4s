@@ -4,13 +4,17 @@
   --black: #414141;
   --black-dim: #414141c8;
   --white: #F7FAFF;
+  --bg: #f5ececab;
+  --bg-opac: #fad7d7;
 }  
   
 @font-face {
   font-family: Jacques-Francois;
   src: url(../../public/fonts/JacquesFrancois-Regular.ttf)
 }
-
+* {
+  z-index: 3;
+}
 html, body {
     background-color: var(--white);
     overflow: hidden;
@@ -44,22 +48,82 @@ html, body {
     width: calc(100vw - 40px);
     height: calc(100vh - 40px);
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     border: 0;
     padding: 20px;
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .backgroundContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     overflow: hidden;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: var(--bg);
+    z-index: 2;
+  }
+
+  .scrollingBackground {
+    background: url(../../public/images/missingChildren.svg) repeat-x;
+    height: 100%;
+    filter: grayscale(1);
+    background-size: auto 100%;
+    animation: slide 600s linear infinite;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-100%, 0, 0); /* The image width */
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  @keyframes fadeInHalf {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
   }
   
   .headerContainer {
     margin: 0 auto;
     width: 100%;
     height: 50px;
+    min-height: 50px;
     max-width: 1000px;
-    border: 2px solid red;
     position: relative;
     display: flex;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn ease 10s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 
   .hrzLine {
@@ -78,10 +142,12 @@ html, body {
     padding: 0px;
     font-family: Jacques-Francois;
     padding: 0px 10px;
-    background: var(--white);
+    background: var(--bg-opac);
     margin-top: -5px;
     font-size: calc(12px + 1.5vw);
     cursor: pointer;
+    border-left: 3px solid var(--black);
+    border-right: 3px solid var(--black);
   }
 
   .hrzLine > p:hover {
@@ -98,15 +164,107 @@ html, body {
     margin-left: auto;
   }
 
+  .infoContainer {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1;
+    height: calc(100vh - 90px);
+    overflow-y: scroll;
+  }
+  
   div[class^='parallax'], div[class*=' parallax']{
     color: #F00;
 }
 
   
   .p1 {
-
+    font-size: calc(24px + 4vw);
+    text-shadow: #3e3c3c 5px 0px 11px;
+    opacity: 0;
+    animation: fadeIn 7s ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 
   .p2 {
+    font-size: calc(14px + 2.5vw);
+    margin-left: 10%;
+    text-shadow: #3e3c3c 5px 0px 11px;
+    opacity: 0;
+    animation: fadeIn 7s ease 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 
+  .p2 > span {
+    color: #BCBCBC;
+    font-size: calc(6px + 1vw);
+  }
+
+  .p3 {
+    margin-top: 10%;
+    font-size: calc(14px + 2.5vw);
+    text-align: center;
+    text-shadow: #3e3c3c 5px 0px 11px;
+    opacity: 0;
+    animation: fadeIn 7s ease 10s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  .p3 > .under-span {
+    font-size: calc(14px + 4vw);
+    /* text-decoration: underline; */
+  }
+
+  .p3 > .bracket-span {
+    font-size: calc(20px + 5vw);
+  }  
+
+  .c1 {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInHalf 3s ease 15s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  .p4 {
+    margin-top: 10%;
+    font-size: calc(14px + 2.5vw);
+    text-align: center;
+    text-shadow: #3e3c3c 5px 0px 11px;
+    padding: 10% 0px;
+  }
+
+  .p4 > span {
+    font-size: calc(18px + 3.5vw);
+  }
+
+  .up-down {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .c2, .c3 {
+    display: block;
+    position: relative;
+    padding: 5% 5%;
+    cursor: pointer;
+  }
+
+  .c2 {
+    transform: rotate(180deg);
+    margin-top: 0%;
+  }
+
+  .c3 {
+    margin-top: 1%;
   }

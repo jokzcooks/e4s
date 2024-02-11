@@ -1,4 +1,4 @@
-00000000 PRG 2024-02-10 15:38:34 80940 52488 "Error loading C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\gitfile.lib: 193 - 193"
-00000001 PRG 2024-02-10 15:38:34 80940 52488 "File hook library C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\gitfile.lib could not be loaded"
-00000002 PRG 2024-02-10 15:38:34 80940 52488 "Error loading C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\s3file.lib: 193 - 193"
-00000003 PRG 2024-02-10 15:38:34 80940 52488 "File hook library C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\s3file.lib could not be loaded"
+00000000 PRG 2024-02-11 01:30:56 111128 112088 "Error loading C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\gitfile.lib: 193 - 193"
+00000001 PRG 2024-02-11 01:30:56 111128 112088 "File hook library C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\gitfile.lib could not be loaded"
+00000002 PRG 2024-02-11 01:30:56 111128 112088 "Error loading C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\s3file.lib: 193 - 193"
+00000003 PRG 2024-02-11 01:30:56 111128 112088 "File hook library C:\Program Files\HPCCSystems\9.4.32\clienttools\filehooks\s3file.lib could not be loaded"
