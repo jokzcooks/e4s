@@ -41,7 +41,7 @@ const popDensities = async () => {
 }
 
 
-function downloadImage(URL, fileName) {
+const downloadImage = (URL, fileName) => {
     return axios
       .get(URL, {responseType: 'arraybuffer'})
       .then(function(response) {
